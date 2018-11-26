@@ -4,6 +4,34 @@
 <div class="container">
 
     <div class="burgerDisplay">
+       <div>
+           <h1>Eaten</h1>
+             {{#each burgers}}
+                {{#if devoured}}
+                    <div class="burgerContainer">
+                        <div class="burgerName">
+                               {{burger_name}}
+                        </div>
+                     
+                    </div>
+
+                {{/if}}
+             {{/each}}
+
+       </div>
+       <div>
+           <h1>Available</h1>
+           {{#each burgers}}
+                {{#unless devoured}}
+                    <div class="burgerContainer">
+                         <div class="burgerName">{{burger_name}}</div> <div><button data-value={{ID}} class="eat">EAT</button></div>
+                    </div>
+
+                {{/unless}}
+             {{/each}}
+
+       </div>
+      
 
     </div>
     <div class="burgerInputContainer">
